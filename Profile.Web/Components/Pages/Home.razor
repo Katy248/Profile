@@ -1,0 +1,72 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Katy (Anton)</h1>
+<p>
+    C# programmer.
+    Software enginering student.
+    The main fan of <a href="https://band.link/STAERF" target="_blank">staerf</a>.
+</p>
+<h2>Technologies</h2>
+
+<ul>
+    <li><code><span class="keyword">ASP.NET</span></code></li>
+    <li>Blazor</li>
+    <li>PowerShell</li>
+</ul>
+
+<h2>Languages</h2>
+<ul>
+    @foreach (var lang in _languages)
+    {
+        <li>
+            <span>
+                <code>@lang.Name</code>
+            </span>
+            @if (!string.IsNullOrWhiteSpace(lang.SmallDescription))
+            {
+                <span class="text-fg-4 dark:text-fg-4-dark italic">
+                    (@lang.SmallDescription)
+                </span>
+            }
+        </li>
+    }
+</ul>
+
+<h2>Projects</h2>
+<ul>
+    @foreach (var proj in _projects)
+    {
+        <li class="mb-3 p-2 border rounded dark:border-bg-1-dark">
+            <h4 class="text-blue dark:text-blue-dark">@proj.Name</h4>
+            <p>@proj.SmallDescription</p>
+            @if (!string.IsNullOrWhiteSpace(proj.Link))
+            {
+                <a href="@proj.Link">link -></a>
+            }
+        </li>
+    }
+</ul>
+@code {
+    (string Name, string SmallDescription)[] _languages = [
+    ("C#", "My favourite"),
+("JS", "The worst"),
+("C++", "Why does it exists?"),
+("C", "Hate it"),
+("GO", "Just touch"),
+("Python", ""),
+("F#", ""),
+("Rust", ""),
+("PowerShell", "The best shell"),
+("bash", "bash"),
+("SQL", "Base queries"),
+];
+    (string Name, string SmallDescription, string Link)[] _projects = [
+    ("DomraSinForms", "Simple web app for creating surveys, forms etc.", "https://github.com/Katy248/DomraSinForms"),
+("Staerf's Patriots site", "Site for 'C..' biography written by Staerf's Pa",
+"https://web.archive.org/web/20231109164418/https://%D0%BF%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82%D1%8B-%D1%81%D1%82%D0%B0%D0%B5.%D1%80%D1%84/"),
+("BrainFuck Compiler", "Not a real compiler but an enterpreter written in `C#`",
+"https://github.com/Katy248/BrainFuckCompiler"),
+];
+}
