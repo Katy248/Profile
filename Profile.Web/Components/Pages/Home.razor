@@ -8,35 +8,35 @@
     Software enginering student.
     The main fan of <a href="https://band.link/STAERF" target="_blank">staerf</a>.
 </p>
-<h2>Technologies</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
 
-<ul>
-    <li><code><span class="keyword">ASP.NET</span></code></li>
-    <li>Blazor</li>
-    <li>PowerShell</li>
-</ul>
+    <LanguagesCard />
+    <ToolsCard />
+    <ProjectsCard />
+    <LinksCard />
+    <article>
+        <h3>My links</h3>
+        <ul class="flex flex-row flex-wrap">
+            @foreach (var link in _links)
+            {
+                <li>
+                    <a href="link.Link" class="flex flex-row border dark:border-bg-4-dark">
 
-<LanguagesCard />
-<ProjectsCard />
+                        <div class="p-1 dark:bg-bg-2 min-w-6">
+
+                        </div>
+                        <div class="p-1 dark:bg-bg-h-dark">
+                            @link.Name
+                        </div>
+                    </a>
+                </li>
+            }
+        </ul>
+    </article>
+
+</div>
 
 
-<h2>My links</h2>
-<ul class="flex flex-row flex-wrap">
-    @foreach (var link in _links)
-    {
-        <li>
-            <a href="link.Link" class="flex flex-row border dark:border-bg-4-dark">
-
-                <div class="p-1 dark:bg-bg-2 min-w-6">
-
-                </div>
-                <div class="p-1 dark:bg-bg-h-dark">
-                    @link.Name
-                </div>
-            </a>
-        </li>
-    }
-</ul>
 
 @code {
 

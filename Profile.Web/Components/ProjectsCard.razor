@@ -5,12 +5,12 @@
     <ul>
         @foreach (var proj in DS.Projects)
         {
-            <li class="mb-3 p-2 border rounded dark:border-bg-1-dark">
+            <li class="my-5">
                 <h4 class="text-blue dark:text-blue-dark">@proj.Name</h4>
-                <p>@proj.SmallDescription</p>
+                <p>@((MarkupString)proj.SmallDescription)</p>
                 @if (!string.IsNullOrWhiteSpace(proj.Link))
                 {
-                    <a href="@proj.Link">link -></a>
+                    <a class="text-sm" href="@proj.Link">link -></a>
                 }
             </li>
         }

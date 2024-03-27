@@ -1,0 +1,32 @@
+@inject DataStore DS
+
+<article>
+    <h3>Tools I use</h3>
+    <ul>
+        @foreach (var tool in DS.Tools)
+        {
+            <li>
+                <div class="flex flex-col">
+                    <div>
+                        <h4 class="text-yellow-dim dark:text-yellow-dim-dark">
+                            @tool.Name
+                        </h4>
+                    </div>
+                    @if (!string.IsNullOrWhiteSpace(tool.Application))
+                    {
+                        <div>
+                            @((MarkupString)tool.Application)
+                        </div>
+                    }
+                    @if (!string.IsNullOrWhiteSpace(tool.Opinion))
+                    {
+                        <div class="dark:text-fg-3-dark">
+                            @((MarkupString)tool.Opinion)
+                        </div>
+                    }
+                </div>
+            </li>
+        }
+    </ul>
+
+</article>

@@ -1,11 +1,12 @@
-﻿<nav class="flex flex-row gap-8 p-4 bg-bg1-dark flex-wrap">
+﻿<nav
+    class="flex flex-row gap-8 p-4 bg-bg1-dark flex-wrap bg-bg-1 dark:bg-bg-1-dark drop-shadow-xl shadow-bg-h dark:shadow-bg-h-dark">
 
     <NavLink href="/" class="block">
-        <span class="text-green dark:text-green-dark"> Katy</span>
+        <span class="text-green dark:text-green-dark">[ Katy ]</span>
     </NavLink>
     @foreach (var link in _links)
     {
-        <NavLink href="@link.Link" class="block flex-grow sm:flex-grow-0 text-center">
+        <NavLink href="@link.Link" class="block flex-grow sm:flex-grow-0 text-end">
             @link.Display
         </NavLink>
     }
@@ -16,8 +17,7 @@
     private (string Link, string Display)[] _links =
     [
     @* ("", "Katy"), *@
-("counter", "Counter ->"),
-("weather", "Weather =>"),
-("projects", "Projects =>>")
+("projects", "[ Projects ]"),
+("weather", "[ Weather ]"),
 ];
 }

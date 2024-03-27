@@ -39,19 +39,27 @@ h3 {
 }
 
 h4 {
-    @apply text-xl font-bold;
+    @apply text-lg;
 }
 
 p {
     @apply mt-2 mb-3;
 }
 
+article {
+    @apply p-2 m-1 rounded-lg border border-fg-4 dark:border-fg-4-dark;
+}
+
 code {
-    @apply px-1 inline-block bg-bg-1 border-bg-2 text-fg border rounded dark:bg-bg-1-dark dark:border-bg-2-dark dark:text-fg-dark;
+    @apply px-1 inline-block bg-bg-1 border-bg-2 border rounded dark:bg-bg-1-dark dark:border-bg-2-dark pt-1;
 }
 
 code .keyword {
     @apply text-green dark:text-green-dark;
+}
+
+a>code {
+    @apply text-red dark:text-red-dark underline;
 }
 
 button {
