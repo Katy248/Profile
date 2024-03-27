@@ -1,0 +1,23 @@
+@inject DataStore DS
+
+<article>
+
+    <h3>Languages</h3>
+    <ul>
+        @foreach (var lang in DS.Languages)
+        {
+            <li>
+                <span>
+                    <code>@lang.Name</code>
+                </span>
+                @if (!string.IsNullOrWhiteSpace(lang.SmallDescription))
+                {
+                    <span class="text-fg-4 dark:text-fg-4-dark italic">
+                        (@lang.SmallDescription)
+                    </span>
+                }
+            </li>
+        }
+    </ul>
+
+</article>

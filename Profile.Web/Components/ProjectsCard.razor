@@ -1,0 +1,18 @@
+@inject DataStore DS
+
+<article>
+    <h3>Projects</h3>
+    <ul>
+        @foreach (var proj in DS.Projects)
+        {
+            <li class="mb-3 p-2 border rounded dark:border-bg-1-dark">
+                <h4 class="text-blue dark:text-blue-dark">@proj.Name</h4>
+                <p>@proj.SmallDescription</p>
+                @if (!string.IsNullOrWhiteSpace(proj.Link))
+                {
+                    <a href="@proj.Link">link -></a>
+                }
+            </li>
+        }
+    </ul>
+</article>
