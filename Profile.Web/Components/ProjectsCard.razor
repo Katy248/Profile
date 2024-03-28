@@ -6,7 +6,7 @@
         @foreach (var proj in DS.Projects)
         {
             <li class="my-5">
-                <h4 class="text-blue dark:text-blue-dark">@proj.Name</h4>
+                <h4 class="text-blue dark:text-blue-dark"> @proj.Name</h4>
                 <p>@((MarkupString)proj.SmallDescription)</p>
                 @if (!string.IsNullOrWhiteSpace(proj.Link))
                 {
