@@ -27,7 +27,7 @@ ul {
 }
 
 h1 {
-    @apply text-3xl mb-3 font-semibold;
+    @apply text-3xl mb-3 font-semibold text-center;
 }
 
 h2 {

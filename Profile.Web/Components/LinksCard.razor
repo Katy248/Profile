@@ -7,10 +7,8 @@
     <div class="flex flex-row flex-wrap gap-3">
         @foreach (var link in DS.Links)
         {
-            <a class="flex" href="@link.Url">
-                <button>
-                    @link.Name
-                </button>
+            <a class="flex underline text-purple dark:text-purple-dark" href="@link.Url">
+                @link.Name
             </a>
         }
     </div>

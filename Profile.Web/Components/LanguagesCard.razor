@@ -1,10 +1,8 @@
 @inject DataStore DS
-
 <article>
-
     <h3>Languages</h3>
     <ul>
-        @foreach (var lang in DS.Languages)
+        @foreach (var lang in DS.Languages.OrderByDescending(l => l.Rating))
         {
             <li>
                 <span>
@@ -19,5 +17,4 @@
             </li>
         }
     </ul>
-
 </article>
