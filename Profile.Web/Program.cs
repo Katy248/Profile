@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+builder.Services.AddLocalization();
+
 builder.Services.AddSingleton<DataStore>();
 
 var app = builder.Build();
@@ -23,6 +25,10 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
+
+app.UseRequestLocalization(new RequestLocalizationOptions()
+    .AddSupportedCultures(["es", "ru-RU", "en-US"])
+    .AddSupportedUICultures(["es", "ru-RU", "en-US"]));
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();

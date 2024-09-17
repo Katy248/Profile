@@ -1,5 +1,4 @@
 @inject DataStore DS
-
 <article>
     <h3>
         My links
@@ -7,10 +6,10 @@
     <div class="flex flex-row flex-wrap gap-3">
         @foreach (var link in DS.Links)
         {
-            <a class="flex underline text-purple dark:text-purple-dark" href="@link.Url">
+            <a class="flex underline hover:no-underline focus:underline text-purple dark:text-purple-dark dark:hover:text-purple-dim-dark"
+                href="@link.Url">
                 @link.Name
             </a>
         }
     </div>
-
 </article>

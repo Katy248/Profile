@@ -1,45 +1,29 @@
 ﻿@page "/"
-
-<PageTitle>Home</PageTitle>
-
-<h1>Katy (Anton)</h1>
-<p class="text-center">
+@inject DataStore DS
+@inject IStringLocalizer<Pages.Home> Localizer
+<PageTitle>Katy248</PageTitle>
+<h1 class="flex justify-center items-center gap-8">
+    <img class="rounded-full"
+        src="https://gravatar.com/avatar/33396cb6c169b7fa08fafb345653aee268e9e618fda5de8b2bf9889d0413ea2e"
+        loading="lazy" />
+    Katy248 (Anton)
+</h1>
+<p class="text-center text-fg-1 dark:text-fg-1-dark">
     C# programmer.
     Software enginering student.
     The main fan of <a href="https://band.link/STAERF" target="_blank">staerf</a>.
 </p>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
-
+<p class="text-center italic">
+    @(DS.RandomCoolQuote())
+</p>
+<h2>Small cards about me</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     <LanguagesCard />
     <ProjectsCard />
     <ToolsCard />
     <LinksCard />
-    <article>
-        <h3>My links</h3>
-        <ul class="flex flex-row flex-wrap">
-            @foreach (var link in _links)
-            {
-                <li>
-                    <a href="link.Link" class="flex flex-row border dark:border-bg-4-dark">
-
-                        <div class="p-1 dark:bg-bg-2 min-w-6">
-
-                        </div>
-                        <div class="p-1 dark:bg-bg-h-dark">
-                            @link.Name
-                        </div>
-                    </a>
-                </li>
-            }
-        </ul>
-    </article>
-
 </div>
-
-
-
 @code {
-
     (string Name, string Link)[] _links = [
     ("GitLab", "https://Gitlab.com/Katy248")
     ];

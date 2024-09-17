@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 * {
-    @apply text-fg dark:text-fg-dark;
+    @apply text-fg-1 dark:text-fg-1-dark;
+    @apply transition-all duration-200;
 }
 
 body {
@@ -24,6 +25,15 @@ code,
 li,
 ul {
     @apply my-1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply text-fg dark:text-fg-dark
 }
 
 h1 {
@@ -47,11 +57,11 @@ p {
 }
 
 article {
-    @apply p-2 m-1 rounded-lg border border-fg-4 dark:border-fg-4-dark;
+    @apply p-2 m-1 rounded-lg border border-fg-4 dark:border-fg-4-dark bg-bg-1 dark:bg-bg-1-dark;
 }
 
 code {
-    @apply px-1 inline-block bg-bg-1 border-bg-2 border rounded dark:bg-bg-1-dark dark:border-bg-2-dark pt-1;
+    @apply px-1 inline-block bg-bg-1 border-bg-2 border rounded dark:bg-bg-1-dark dark:border-bg-2-dark;
 }
 
 code .keyword {
@@ -67,11 +77,11 @@ button {
 }
 
 a {
-    @apply text-orange dark:text-orange-dark hover:underline
+    @apply text-orange dark:text-orange-dark
 }
 
 
-html {
+/* html {
     --bg_h: #f9f5d7;
     --bg: #fbf1c7;
     --bg_s: #f2e5bc;
@@ -138,4 +148,4 @@ html.dark {
     --aqua-dim: #689d6a;
     --gray-dim: #a89984;
     --orange-dim: #d65d0e;
-}
+} */

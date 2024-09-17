@@ -1,9 +1,8 @@
 @inject DataStore DS
-
 <article>
     <h3>Projects</h3>
     <ul>
-        @foreach (var proj in DS.Projects)
+        @foreach (var proj in DS.Projects.Take(3))
         {
             <li class="my-5">
                 <h4 class="text-blue dark:text-blue-dark"> @proj.Name</h4>
@@ -15,4 +14,7 @@
             </li>
         }
     </ul>
+    <div>
+        <NavLink href="/projects">More projects...</NavLink>
+    </div>
 </article>
